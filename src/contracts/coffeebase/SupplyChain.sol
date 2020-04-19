@@ -254,7 +254,7 @@ contract SupplyChain is AccessControl {
         // Call modifier to check if upc has passed previous supply chain stage
     sold(_upc)
         // Call modifier to verify caller of this function
-    onlyFarmer()
+    onlyDistributor()
     {
         // Update the appropriate fields
         items[_upc].itemState = State.Shipped;
