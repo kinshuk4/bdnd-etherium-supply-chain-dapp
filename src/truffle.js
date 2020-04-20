@@ -1,4 +1,4 @@
-const HDWalletProvider = require('truffle-hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 const infuraKey = "your key here";
 const fs = require('fs');
 const metamaskMnemonic = fs.readFileSync(".secret").toString().trim();
