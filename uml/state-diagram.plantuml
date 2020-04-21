@@ -1,0 +1,14 @@
+@startuml
+state CoffeeState {
+
+[*] -down-> Harvested
+Harvested -down-> Processed
+Processed -down-> Packed
+Packed -down-> ForSale
+ForSale -down-> Sold
+Sold -down-> Shipped
+Shipped -down-> Received
+Received -down-> Purchased
+
+}
+@enduml

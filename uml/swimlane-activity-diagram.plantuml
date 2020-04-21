@@ -1,0 +1,17 @@
+@startuml
+|Farmer|
+start
+:harvest;
+:process;
+:pack;
+:sell;
+|#AntiqueWhite|Distributor|
+:buy;
+|Farmer|
+:ship;
+|Retailer|
+:receive;
+|Consumer|
+:purchase;
+stop
+@enduml

@@ -1,0 +1,58 @@
+@startuml
+package SmartContract {
+
+    class AccessControl {
+        + setFarmer(farmerAddress): address
+        + setDistributor(distributorAddress): address
+        + setRetailer(retailerAddress): address
+        + setConsumer(consumerAddress): address
+    }
+
+    class Ownable {
+        + origOwner: address
+        + renounceOwnership()
+        + transferOwnership()
+    }
+
+     class Base {
+        + item: struct
+        +harvestItem(itemId): uint256
+        +processItem(itemId): uint256
+        +packageItem(itemId): uint256
+        +sellItem(itemId): uint256
+        +buyItem(itemId): uint256
+        +shipItem(itemId): uint256
+        +receiveItem(itemId): uint256
+        +purchaseItem(itemId): uint256
+    }
+
+    scale 2
+     class Core  {
+        + owner: address
+    }
+
+     class Farmer {
+        + farmerAddress: address
+    }
+
+    class Distributor {
+        + distributorAddress: address
+    }
+
+    class Retailer {
+        + retailerAddress: address
+    }
+
+    class Consumer {
+        + consumerAddress: address
+    }
+
+    Base <|-- Core
+    Ownable <|-- Core
+    AccessControl <|-- Base
+    Farmer --|> AccessControl
+    Distributor --|> AccessControl
+    Retailer --|> AccessControl
+
+}
+@enduml
