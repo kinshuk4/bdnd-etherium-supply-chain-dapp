@@ -1,0 +1,28 @@
+@startuml
+scale 2
+entity Item
+actor Farmer
+actor Distributor
+actor Retailer
+actor Consumer
+activate Item
+activate Farmer
+Farmer -> Item : harvest
+Farmer -> Item : process
+Farmer -> Item : pack
+Farmer -> Item : sell
+deactivate Item
+activate Distributor
+Distributor -> Farmer : buy
+deactivate Distributor
+activate Retailer
+Farmer --> Retailer : ship
+Retailer --> Farmer : receive
+deactivate Farmer
+activate Consumer
+Consumer --> Retailer : purchase
+deactivate Retailer
+deactivate Consumer
+Item --> Consumer : fetch
+Item --> Consumer : fetch
+@enduml
